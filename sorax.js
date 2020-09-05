@@ -199,7 +199,8 @@ let number =  100;
 console.log(number);
 
 function f1(){
-    console.log(number *3 +", остоси у тракториста")
+    throw new Error('ебануло');
+    console.log(number *3 +", остоси у тракториста");
 }
 function f2(){
     console.log(number + " 666 ")
@@ -207,13 +208,13 @@ function f2(){
 function f3(){
     console.log("finally выполняется в любом случае")
 }
-throw f1;
+
 try{                   // ПОПЫТКА.если блок try не может выполниться, то выполняется блок catch
     f1() 
 }
 catch(err){            // ОТЛОВ.блок catch не будет выполняться, если блок try выполнился
     f2();
-    // console.log(err);
+    console.log(err);
 }
 finally {               // ВЫПОЛНЕНИЕ.выполняется всегда, в независимости от того, было исключение или нет.
     f3();
