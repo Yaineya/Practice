@@ -1,0 +1,58 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(224, 178, 178);
+}
+
+.general{
+    align-self: start;
+    background-color: rgb(190, 209, 190);
+    text-align: center;
+    width: 300px;
+}
+
+.shape_1 {
+    background-color: rgb(150, 150, 197);
+    width: 100px;
+    height: 150px;
+    text-align: justify;
+    border-radius: 5px 20px 30px 5px ;
+}
+
+.shape_2{
+    background-color: rgb(218, 201, 171);
+    text-align: right;
+    width: 200px;
+    height: auto;
+    /* margin-top: 20px; */
+}
+
+.shape_3{
+    position: relative;
+    background-color: rgb(214, 123, 90);
+    width: 600px;
+    height: 400px;
+    /* margin-top: 10px; */
+}
+
+.shape_4{
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    overflow-y: scroll;
+    background-color: rgb(96, 199, 212);
+    width: 100px;
+    height: 140px;
+    margin-left: 180px;
+    /* margin-top: 60px; */
+    opacity: 0.3;
+}
+
+.shape_5 {
+    background-color: red;
+}

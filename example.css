@@ -1,0 +1,36 @@
+/* *, *:before, *:after {
+    display:flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    border: 2px solid black;
+  } */
+
+.one{
+    width: 200px;
+    height: 100px;
+    background-color: rgb(110, 82, 187);
+}
+
+.two{
+    width: 200px;
+    height: 100px;
+    background-color: royalblue;
+}
+
+.three{
+    width: 200px;
+    height: 100px;
+    background-color: seagreen;
+}
+
+.four{
+    width: 200px;
+    height: 100px;
+    background-color: slategray;
+}
+
+.five{
+    width: 200px;
+    height: 100px;
+    background-color: thistle;
+}
