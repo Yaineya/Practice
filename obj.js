@@ -12,7 +12,7 @@ man.getJob = function() {
 }
 
 console.log( man.getJob());
-man.dddd = "rrrr";
+man.dddd = "rrrrввввв";
 delete man.dddd;
 man.age = 71;
 man.job.salary = 100500;
