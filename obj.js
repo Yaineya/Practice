@@ -17,16 +17,11 @@ delete man.dddd;
 man.age = 71;
 man.job.salary = 100500;
 
-
 console.log(man);
-
-
-
 
 ///
 
 var john = {
-
     eyes: {
         left: {
             color: 'green',
