@@ -5,7 +5,7 @@ function kmh_ms(kmH){
 
 function ms_kmh(ms){
     let result = ms * 3.6;
-    return console.log(result.toFixed(2));
+    return console.log(result.toFixed(3));
 }
 
 module.exports = {
@@ -14,10 +14,10 @@ module.exports = {
     ms_kmh: ms_kmh
 }
 
-// kmh_ms(100);
-// kmh_ms(60);
+// kmh_ms(200);
+// kmh_ms(20);
 // kmh_ms(120);
 
-ms_kmh(0);
+// ms_kmh(100);
 // ms_kmh(23);
 // ms_kmh(33);
