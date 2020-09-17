@@ -2,14 +2,14 @@
   "name": "sandbox",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "jest" 
+    "test": "jest ./",
+    "lint": "eslint ./"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
   "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-node": "^4.1.0",
     "jest": "^26.4.2"
   }
 }
