@@ -1,11 +1,11 @@
 function kmh_ms(kmH){
-    let result = kmH * 1000 / 3600;
-    return console.log(result.toFixed(2));
+    let result = (kmH * 1000 / 3600).toFixed(2);
+    return parseFloat(result);
 } 
 
 function ms_kmh(ms){
-    let result = ms * 3.6;
-    return console.log(result.toFixed(3));
+    let result =  (ms * 3.6).toFixed(2);
+    return parseFloat(result);
 }
 
 module.exports = {

@@ -1,7 +1,7 @@
 function isNumber(value) {
     return (
         typeof value === "number" && 
-        value === value &&
+        value === value && // NaN 
         value !== Infinity &&
         value !== -Infinity
     )
