@@ -5,20 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do LIst</title>
-    <link rel="stylesheet" href="toDoList.css">
+    <link rel="stylesheet" href="/dist/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <div>
-            <div class="head">
-                <h1>Список Дел</h1>
+        <div class="content">
+            <div class="header">
+                <div class="title">To Do LIst
+                </div>
+            <div class="input_block">
+                <div class="input"><input type="text" placeholder="Дело, которое нужно сделать"></div>
+                <div class="button"><button>Add Task</button></div>
             </div>
-            <input type="text" placeholder="Дело, которое нужно сделать">
-            <button>Добавить в список дел!!!</button>
+
+            </div>
         </div>
+        <ul id="list"></ul>
     </div>
-    <ul id="list"></ul>
     </div>
 </body>
 
