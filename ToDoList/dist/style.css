@@ -21,20 +21,11 @@ body {
   height: 200px;
   margin-bottom: 20px;
 }
-
-.title {
+.header .title {
   background-color: #a7a7a7;
   font-size: 30px;
   text-align: center;
   margin: 130px auto;
-}
-
-.input {
-  width: 70%;
-}
-
-.button {
-  margin-left: 10px;
 }
 
 .input_block {
@@ -47,12 +38,16 @@ body {
   justify-content: space-around;
   margin-bottom: 10px;
 }
-
-input {
+.input_block .input {
+  width: 70%;
+}
+.input_block input {
   width: 100%;
 }
-
-button {
+.input_block .button {
+  margin-left: 10px;
+}
+.input_block .button button {
   background-color: #d4d4d4;
   border-radius: 5px;
 }
@@ -61,24 +56,64 @@ button {
   background-color: #d4d4d4;
   margin-bottom: 10px;
 }
-
-.list li {
+.tasks .list li {
   padding-left: 10px;
   text-transform: lowercase;
   line-height: 40px;
   list-style-type: none;
 }
-
-.list li:nth-child(odd) {
+.tasks .list li:nth-child(odd) {
   background-color: #a7a7a7;
 }
 
 .footer {
+  margin-bottom: 10px;
   font-size: 14px;
   background-color: #d4d4d4;
 }
-
-.text {
+.footer .text {
   text-align: center;
   padding: 5px;
+}
+
+.test_mixin {
+  display: flex;
+}
+
+.block-1 {
+  background-color: #6cacb1;
+  width: 100px;
+  height: 200px;
+  margin: 3px;
+}
+
+.block-2 {
+  background-color: #385e61;
+  width: 150px;
+  height: 200px;
+  margin: 3px;
+}
+
+.block-3 {
+  color: #c4c3c3;
+  background-color: #122e30;
+  width: 200px;
+  height: 200px;
+  margin: 3px;
+}
+
+.block-4 {
+  color: #bebebe;
+  background-color: #132729;
+  width: 250px;
+  height: 200px;
+  margin: 3px;
+}
+
+.block-5 {
+  color: #c2c2c2;
+  background-color: #081b1d;
+  width: 300px;
+  height: 200px;
+  margin: 3px;
 }

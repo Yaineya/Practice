@@ -2,6 +2,11 @@ $color_block: rgb(212, 212, 212);
 $color_block_2: rgb(167, 167, 167);
 $color_block_3: rgb(116, 115, 115);
 
+@mixin size($width, $height, $margin) {
+    width: $width;
+    height: $height;
+    margin: $margin;
+}
 
 body{
     padding: 0 30px;
@@ -15,7 +20,6 @@ body{
     flex-direction: column;
 }
 
-
 .content{
     display: flex;
     flex-direction: column;
@@ -28,21 +32,12 @@ body{
     // max-width: 100%;
     height: 200px;
     margin-bottom: 20px;
-}
-
-.title{
-    background-color: $color_block_2;
-    font-size: 30px;
-    text-align: center;
-    margin: 130px auto;
-}
-
-.input{
-    width: 70%;
-}
-
-.button{
-    margin-left: 10px;
+    .title{
+        background-color: $color_block_2;
+        font-size: 30px;
+        text-align: center;
+        margin: 130px auto;
+    }
 }
 
 .input_block{
@@ -54,38 +49,71 @@ body{
     padding-right: 2px;
     justify-content: space-around;
     margin-bottom: 10px;
-}
-
-input{
-    width: 100%;
-}
-
-button{
-    background-color: $color_block;
-    border-radius: 5px;
+    .input{
+        width: 70%;
+    }
+    input{
+        width: 100%;
+    }
+    .button{
+        margin-left: 10px;
+        button{
+            background-color: $color_block;
+            border-radius: 5px;
+        }
+    }
 }
 
 .tasks{
     background-color: $color_block;
     margin-bottom: 10px;
-}
-.list li{
-    padding-left: 10px;
-    text-transform: lowercase;
-    line-height: 40px;
-    list-style-type: none;
-}
-
-.list li:nth-child(odd){
-    background-color: $color_block_2;
+    .element_li{}
+    .list li{
+        padding-left: 10px;
+        text-transform: lowercase;
+        line-height: 40px;
+        list-style-type: none;
+    }
+    .list li:nth-child(odd){
+        background-color: $color_block_2;
+    }
 }
 
 .footer{
+    margin-bottom: 10px;
     font-size: 14px;
     background-color: $color_block;
+    .text{
+        text-align: center;
+        padding: 5px ;
+    }
 }
 
-.text{
-    text-align: center;
-    padding: 5px ;
+.test_mixin{
+    display: flex;
+}
+
+.block-1{
+    background-color: rgb(108, 172, 177);
+    @include size(100px, 200px, 3px )
+}
+.block-2{
+    background-color: rgb(56, 94, 97);
+    @include size(150px, 200px, 3px )
+}
+.block-3{
+    color: rgb(196, 195, 195);
+    background-color: rgb(18, 46, 48);
+    @include size(200px, 200px , 3px )
+}
+.block-4{
+    color: rgb(190, 190, 190);
+    background-color: rgb(19, 39, 41);
+    @include size(250px, 200px, 3px )
+}
+.block-5{
+    color: rgb(194, 194, 194);
+    background-color: rgb(8, 27, 29);
+    @include size(300px, 200px , 3px )
+    
 }
