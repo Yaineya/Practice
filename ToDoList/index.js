@@ -3,11 +3,37 @@ let btn = document.querySelector(".addTask");
 let list = document.querySelector(".ul");
 
 function addTasks(text) {
-    let newElement = document.createElement("li");  // создаем новый эдемент с тэгом li
+    
+    let newElement = document.createElement("div");  // создаем новый эдемент строку, которая содержит все, что относится к элементу туду
+    newElement.className = "new_elem_li";   // присвиваем новому элементу классНэйм new_elem_li
+    newElement.setAttribute('data-id', text)
 
-    newElement.className = "element_li";   // создаем новый элемент с классНэймом element_li
-    newElement.textContent = text;  // говорим что в новыом элементе будет значение из инпута
-    list.appendChild(newElement);          // в блок УЛ добавляем Ребенка newElement
+    // это название туду
+    let name = document.createElement("span")
+    name.textContent = text;
+
+    // создаем новый эдемент с тэгом button
+    let buttonDelete = document.createElement("button"); 
+    buttonDelete.className = "delete";  // присвиваем новому элементу классНэйм delete
+    buttonDelete.textContent = "delete";
+    buttonDelete.setAttribute('data-id', text)
+
+    newElement.appendChild(name);
+    newElement.appendChild(buttonDelete);
+
+    list.appendChild(newElement);   // в блок УЛ добавляем Ребенка newElement
+
+    // рассказать
+    // создает на каждый элменет свой обработчик
+    // это отжирает память, так как на каждый элемент оздается свой обработчик удаления
+    // а также при удалении надо делать `.removeEventListener`
+
+    // buttonDelete.addEventListener("click", function () {
+    //     list.removeChild(newElement);
+    //     list.removeChild(buttonDelete);
+    // })
+
+    // list.appendChild(buttonDelete);
 }
 
 btn.addEventListener("click", function (e) {
@@ -19,20 +45,23 @@ btn.addEventListener("click", function (e) {
 })
 
 document.addEventListener("keyup", function (e) {
-    e.preventDefault();          
-    if(e.code === "Enter") {
+    e.preventDefault(); // рассказать         
+    if(e.code === "Enter" && !(input.value === "" ) ){
         addTasks(input.value);  
         input.value = "";  
     }
 })
 
+document.addEventListener("click", function(e) {
+    // console.log(e.target.className)
 
-// document.addEventListener( "keyup", "click",  function (e) {
-//     e.preventDefault();          
-//     if(e.code === "Enter" && !(input.value === "" )) {
-//         addTasks(input.value);  
-//         input.value = "";  
-//     }
-// })
+    if (e.target.className === 'delete') {
+        let buttonDelete = e.target;
+        let id = buttonDelete.getAttribute('data-id');
+        let listItem = list.querySelector(`[data-id=${id}]`);
+        // console.log(listItem)
+        list.removeChild(listItem);
+    }
+})
 
 

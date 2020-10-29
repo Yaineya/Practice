@@ -1,3 +1,8 @@
+input,
+button {
+  outline: none;
+}
+
 body {
   padding: 0 30px;
   font-size: 20px;
@@ -17,7 +22,7 @@ body {
 }
 
 .header {
-  background-color: #d4d4d4;
+  background-color: #e4e4e4;
   height: 200px;
   margin-bottom: 20px;
 }
@@ -30,11 +35,9 @@ body {
 
 .input_block {
   height: 40px;
-  background-color: #747373;
+  background-color: #525252;
   display: flex;
   padding-top: 10px;
-  padding-left: 2px;
-  padding-right: 2px;
   justify-content: space-around;
   margin-bottom: 10px;
 }
@@ -44,32 +47,57 @@ body {
 .input_block input {
   width: 100%;
 }
+.input_block input:hover {
+  outline: 1px solid #5be95b;
+}
 .input_block .button {
   margin-left: 10px;
 }
 .input_block .button button {
-  background-color: #d4d4d4;
+  background-color: #5be95b;
   border-radius: 5px;
 }
 
 .tasks {
-  background-color: #d4d4d4;
+  background-color: #e4e4e4;
   margin-bottom: 10px;
 }
-.tasks .list li {
+.tasks .new_elem_li {
+  display: flex;
+  justify-content: space-between;
   padding-left: 10px;
   text-transform: lowercase;
   line-height: 40px;
   list-style-type: none;
+  border-radius: 5px;
 }
-.tasks .list li:nth-child(odd) {
+.tasks .new_elem_li:hover .delete {
+  opacity: 1;
+}
+.tasks .new_elem_li:hover {
+  color: #df8282;
+}
+.tasks span {
+  margin-left: 60px;
+}
+.tasks .list {
+  width: 100%;
+}
+.tasks .new_elem_li:nth-child(odd) {
   background-color: #a7a7a7;
+}
+.tasks .delete {
+  border-radius: 5px;
+  background-color: #df8282;
+  width: 80px;
+  margin: 3px 90px 3px 0;
+  opacity: 0;
 }
 
 .footer {
   margin-bottom: 10px;
   font-size: 14px;
-  background-color: #d4d4d4;
+  background-color: #e4e4e4;
 }
 .footer .text {
   text-align: center;

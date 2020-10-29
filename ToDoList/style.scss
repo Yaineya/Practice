@@ -1,6 +1,11 @@
-$color_block: rgb(212, 212, 212);
+$color_block: rgb(228, 228, 228);
 $color_block_2: rgb(167, 167, 167);
-$color_block_3: rgb(116, 115, 115);
+$color_block_3: rgb(82, 82, 82);
+
+input,
+button{
+    outline: none;
+}
 
 @mixin size($width, $height, $margin) {
     width: $width;
@@ -23,13 +28,11 @@ body{
 .content{
     display: flex;
     flex-direction: column;
-    // margin: 0 50px;
     flex: 1 1 auto;
 }
 
 .header{
     background-color: $color_block;
-    // max-width: 100%;
     height: 200px;
     margin-bottom: 20px;
     .title{
@@ -45,8 +48,6 @@ body{
     background-color: $color_block_3;
     display: flex;
     padding-top: 10px;
-    padding-left: 2px;
-    padding-right: 2px;
     justify-content: space-around;
     margin-bottom: 10px;
     .input{
@@ -55,10 +56,13 @@ body{
     input{
         width: 100%;
     }
+    input:hover{
+        outline: 1px solid rgb(91, 233, 91);
+    }
     .button{
         margin-left: 10px;
         button{
-            background-color: $color_block;
+            background-color:rgb(91, 233, 91);
             border-radius: 5px;
         }
     }
@@ -67,15 +71,36 @@ body{
 .tasks{
     background-color: $color_block;
     margin-bottom: 10px;
-    .element_li{}
-    .list li{
+    .new_elem_li{
+        display: flex;
+        justify-content: space-between;
         padding-left: 10px;
         text-transform: lowercase;
         line-height: 40px;
         list-style-type: none;
+        border-radius: 5px;
+        &:hover .delete {
+            opacity: 1;
+        }
     }
-    .list li:nth-child(odd){
+    .new_elem_li:hover{
+        color: rgb(223, 130, 130);
+    }
+    span{
+        margin-left: 60px;
+    }
+    .list{
+        width: 100%;
+    }
+    .new_elem_li:nth-child(odd){
         background-color: $color_block_2;
+    }
+    .delete{
+        border-radius: 5px;
+        background-color: rgb(223, 130, 130);
+        width: 80px;
+        margin: 3px 90px 3px 0;
+        opacity: 0;
     }
 }
 
@@ -86,6 +111,22 @@ body{
     .text{
         text-align: center;
         padding: 5px ;
+    }
+}
+
+// чистый css
+.block__element--modifier {}
+.block_element__modifier {}
+
+// scss/sass/stylus/less...
+
+.block {
+    &__element {
+        &--modifier {}
+        &--closed {}
+    }
+    &__elem {
+        &--mod {}
     }
 }
 
@@ -115,5 +156,4 @@ body{
     color: rgb(194, 194, 194);
     background-color: rgb(8, 27, 29);
     @include size(300px, 200px , 3px )
-    
 }
