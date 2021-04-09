@@ -74,20 +74,25 @@ body {
 .tasks .new_elem_li:hover .delete {
   opacity: 1;
 }
+.tasks .new_elem_li #wrap input {
+  width: 15px;
+  height: 15px;
+}
+.tasks .new_elem_li #wrap span {
+  margin-left: 20px;
+}
 .tasks .new_elem_li:hover {
   color: #df8282;
-}
-.tasks span {
-  margin-left: 60px;
 }
 .tasks .list {
   width: 100%;
 }
-.tasks .new_elem_li:nth-child(odd) {
+.tasks .new_elem_li:nth-child(even) {
   background-color: #a7a7a7;
 }
 .tasks .delete {
   border-radius: 5px;
+  max-height: 30px;
   background-color: #df8282;
   width: 80px;
   margin: 3px 90px 3px 0;
@@ -102,6 +107,11 @@ body {
 .footer .text {
   text-align: center;
   padding: 5px;
+}
+
+img {
+  width: 40px;
+  height: 40px;
 }
 
 .test_mixin {
@@ -144,4 +154,8 @@ body {
   width: 300px;
   height: 200px;
   margin: 3px;
+}
+
+.hide {
+  display: none;
 }

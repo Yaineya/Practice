@@ -82,26 +82,35 @@ body{
         &:hover .delete {
             opacity: 1;
         }
+        #wrap{
+            input{
+                width: 15px;
+                height: 15px;
+            }
+            span{
+                margin-left: 20px;
+            }
+        }
     }
     .new_elem_li:hover{
         color: rgb(223, 130, 130);
     }
-    span{
-        margin-left: 60px;
-    }
     .list{
         width: 100%;
     }
-    .new_elem_li:nth-child(odd){
+    .new_elem_li:nth-child(even){
         background-color: $color_block_2;
     }
     .delete{
         border-radius: 5px;
+        max-height: 30px;
         background-color: rgb(223, 130, 130);
         width: 80px;
         margin: 3px 90px 3px 0;
         opacity: 0;
     }
+}
+#bascketTrash{ 
 }
 
 .footer{
@@ -112,13 +121,12 @@ body{
         text-align: center;
         padding: 5px ;
     }
+    
 }
-
-// чистый css
-.block__element--modifier {}
-.block_element__modifier {}
-
-// scss/sass/stylus/less...
+img{
+    width: 40px;
+    height: 40px;
+}
 
 .block {
     &__element {
@@ -156,4 +164,9 @@ body{
     color: rgb(194, 194, 194);
     background-color: rgb(8, 27, 29);
     @include size(300px, 200px , 3px )
+}
+
+
+.hide{
+    display: none;
 }

@@ -3,34 +3,45 @@
 var input = document.querySelector(".input_text");
 var btn = document.querySelector(".addTask");
 var list = document.querySelector(".ul");
+var wrap = document.querySelector("#wrap");
 
-function addTasks(text) {
+function genId() {
+  return Math.random().toString(36).substr(2, 9);
+}
+
+function addTasks(HTMLInputElement) {
   var newElement = document.createElement("div"); // создаем новый эдемент строку, которая содержит все, что относится к элементу туду
 
   newElement.className = "new_elem_li"; // присвиваем новому элементу классНэйм new_elem_li
 
-  newElement.setAttribute('data-id', text); // это название туду
+  newElement.draggable = "true";
+  newElement.setAttribute("data-id", genId()); // newElement.setAttribute("id",HTMLInputElement);
 
-  var name = document.createElement("span");
-  name.textContent = text; // создаем новый эдемент с тэгом button
+  var div_with_data = document.createElement("div"); // создаем див чекбоксом и текстом
 
-  var buttonDelete = document.createElement("button");
-  buttonDelete.className = "delete"; // присвиваем новому элементу классНэйм delete
+  div_with_data.id = "wrap";
+  var label = document.createElement("label");
+  label["for"] = "checkbox";
+  var check = document.createElement("input"); // создаем инпут с ЧекБоксом
 
-  buttonDelete.textContent = "delete";
-  buttonDelete.setAttribute('data-id', text);
-  newElement.appendChild(name);
+  check.id = "checkbox";
+  check.type = "checkbox";
+  var name = document.createElement("span"); // создаем Спан
+
+  name.textContent = HTMLInputElement;
+  var buttonDelete = document.createElement("button"); // создаем кнопку с тэгом button
+
+  buttonDelete.className = "delete"; // присвиваем кнопке классНэйм delete
+
+  buttonDelete.textContent = "delete"; // присвиваем кнопке контент delete
+
+  buttonDelete.setAttribute("data-id", HTMLInputElement);
+  list.appendChild(newElement);
+  newElement.appendChild(div_with_data);
+  div_with_data.appendChild(label);
+  div_with_data.appendChild(check);
+  div_with_data.appendChild(name);
   newElement.appendChild(buttonDelete);
-  list.appendChild(newElement); // в блок УЛ добавляем Ребенка newElement
-  // рассказать
-  // создает на каждый элменет свой обработчик
-  // это отжирает память, так как на каждый элемент оздается свой обработчик удаления
-  // а также при удалении надо делать `.removeEventListener`
-  // buttonDelete.addEventListener("click", function () {
-  //     list.removeChild(newElement);
-  //     list.removeChild(buttonDelete);
-  // })
-  // list.appendChild(buttonDelete);
 }
 
 btn.addEventListener("click", function (e) {
@@ -44,20 +55,43 @@ btn.addEventListener("click", function (e) {
   }
 });
 document.addEventListener("keyup", function (e) {
-  e.preventDefault(); // рассказать         
+  e.preventDefault(); // рассказать
 
   if (e.code === "Enter" && !(input.value === "")) {
     addTasks(input.value);
     input.value = "";
   }
 });
-document.addEventListener("click", function (e) {
-  // console.log(e.target.className)
-  if (e.target.className === 'delete') {
-    var buttonDelete = e.target;
-    var id = buttonDelete.getAttribute('data-id');
-    var listItem = list.querySelector("[data-id=".concat(id, "]")); // console.log(listItem)
 
+function deleteElement(event) {
+  if (event.target.className === "delete") {
+    var buttonDelete = event.target;
+    var id = buttonDelete.getAttribute("data-id");
+    var listItem = list.querySelector(".new_elem_li");
     list.removeChild(listItem);
   }
-});
+}
+
+document.addEventListener("click", deleteElement);
+var one = {
+  name: "hello",
+  age: 33
+};
+var two = {
+  noName: "world",
+  age: 55
+};
+var five = [3, 5, "ghggjjjjk"];
+var clone = {};
+var cloneArr = [];
+
+for (key in one) {
+  clone[key] = one[key];
+}
+
+for (key in five) {
+  cloneArr[key] = five[key];
+}
+
+Object.assign(clone, one, two);
+console.log(clone);
