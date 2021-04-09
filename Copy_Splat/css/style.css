@@ -3,11 +3,6 @@ body{
    padding: 8px;
 }
 
-body div,
-body img{
-    /* border: 1px solid blue; */
-}
-
 .header{
     padding: 60px 0 0 120px  ;
     width: 100%;
@@ -46,7 +41,6 @@ a {
 
 .products img{
     max-width: 100%;
-    /* margin: 0 auto ; */
 }
 
 .goods{
